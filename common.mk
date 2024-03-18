@@ -345,9 +345,7 @@ INCLUDE_PIXEL_LAUNCHER := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    android.hardware.power@1.2.vendor
+$(call inherit-product, vendor/hardware/oplus/aidl/power-libperfmgr/power_product.mk)
 
 # QMI
 PRODUCT_PACKAGES += \
