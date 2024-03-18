@@ -85,9 +85,6 @@ function blob_fixup() {
             sed -i "/NXPLOG_\w\+_LOGLEVEL/ s/0x03/0x02/" "${2}"
             sed -i "s/NFC_DEBUG_ENABLED=1/NFC_DEBUG_ENABLED=0/" "${2}"
             ;;
-        vendor/etc/msm_irqbalance.conf)
-            sed -i "s/IGNORED_IRQ=27,23,38$/&,115,332/" "${2}"
-            ;;
         vendor/lib64/hw/com.qti.chi.override.so)
             grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
             sed -i "s/com.oem.autotest/\x00om.oem.autotest/" "${2}"
